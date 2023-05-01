@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+import Hooks from './components/Hooks';
 import AnotherComponent from './components/AnottherComponent';
 import Images from './components/Images';
+import List from './components/List';
 import './App.css';
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
     <div>TESTE
       <AnotherComponent />
       <Images />
+      <Hooks/>
+      <List/>
     </div>
   );
 }
