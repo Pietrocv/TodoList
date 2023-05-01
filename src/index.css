@@ -1,5 +1,5 @@
 html{
-  background-color: linear-gradient(
+  background: linear-gradient(
     195deg,
     rgba(240, 98, 146, 1) 0%,
     rgba(221, 89, 133, 1) 98%
@@ -7,6 +7,7 @@ html{
 }
 
 body{
+  
   margin: 0;
   padding: 0;
   font-family: Helvetica;
