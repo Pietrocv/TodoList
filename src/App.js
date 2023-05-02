@@ -3,15 +3,18 @@ import { useState, useEffect } from 'react';
 import { BsTrash, BsBookmarkCheck, BsBookMarkCheckFill, BsBookmarkCheckFill} from "react-icons/bs";
 import { IconName } from "react-icons/bs";
 
+//Declarando a API 
 const API ="http://localhost:5000"
 
 function App() {
+
+  //Declarando as váriaveis dos TODOS
   const [title, setTitle] = useState("")
   const [time, setTime] = useState("")
   const [todos, setTodos] = useState([])
   const [loading, setLoading] = useState(false)
 
-  // Load todos page on page load
+  //Carregando os TODOS na página, função async só permite depois de carregar tudo
   useEffect(() =>{ 
     const loadData = async() => {
       setLoading(true)
@@ -31,13 +34,14 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    //Declarando o TODO
     const todo = {
       id: Math.random(),
       title,
       time,
       done: false
     }
+    //Usando Fetch API para enviar os dados para o servidor
     await fetch(API + "/todos", {
       method: "POST",
       body: JSON.stringify(todo),
@@ -45,18 +49,18 @@ function App() {
         "Content-Type": "application/json",
       },
     })
-
+    //Verficando se o o todo já foi enviado
     setTodos((prevState) => [...prevState, todo])
-
+    //Limpando as informações para que o usuário coloque mais informações
     setTime("")
     setTitle("")
   }
-
+  //Metódo que deleta
   const handleDelete = async (id) =>{
     await fetch(API + "/todos/" + id, {
       method: "DELETE",
     })
-
+    //Verificando se o TODO é diferente do TODO que foi deletado
     setTodos((prevState) => prevState.filter((todo) => todo.id !== id)) 
   }
 
@@ -76,7 +80,7 @@ function App() {
   }
 
   if(loading){
-    return <p>Carregando...</p>
+    return <p>Aguarde um segundo, estamos carregando suas informações!</p>
   }
 
 
