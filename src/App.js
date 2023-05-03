@@ -97,7 +97,7 @@ function App() {
                 <input 
                   type="text" 
                   name="title" 
-                  placeholder="Título da Tareda" 
+                  placeholder="Título da Tarefa" 
                   onChange={(e) => setTitle(e.target.value)} 
                   value={title || ""} 
                   required>
