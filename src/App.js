@@ -104,7 +104,6 @@ function App() {
                     
                   </input>
               </div>
-              
               <div className='form-control'>
                 <label htmlFor='time'>Duração:</label>
                 <input type="time" name="time" placeholder="Tempo Estimado" onChange={(e) => setTime(e.target.value)} value={time || ""} required></input>
