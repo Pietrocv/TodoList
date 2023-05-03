@@ -97,14 +97,13 @@ function App() {
                 <input 
                   type="text" 
                   name="title" 
-                  placeholder="Título da Tareda" 
+                  placeholder="Título da Tarefa" 
                   onChange={(e) => setTitle(e.target.value)} 
                   value={title || ""} 
                   required>
                     
                   </input>
               </div>
-              
               <div className='form-control'>
                 <label htmlFor='time'>Duração:</label>
                 <input type="time" name="time" placeholder="Tempo Estimado" onChange={(e) => setTime(e.target.value)} value={time || ""} required></input>
